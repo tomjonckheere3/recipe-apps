@@ -1,0 +1,104 @@
+@import "variables";
+
+body {
+    font-family: $mainFont;
+    font-size: $sizeNormal;
+
+    main {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+
+
+
+        div.recipe {
+
+            width: 90%;
+            background-color: $primaryColor;
+            overflow-wrap: anywhere;
+
+            div.recipeImage {
+
+                margin-bottom: 1rem;
+
+                img {
+                    width: 100%;
+                    height: $imgSuggestion;
+                    object-fit: cover;
+                }
+                
+            }
+
+            div.recipeInfo {
+                   
+                padding: 0 1rem 1rem 1rem;
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+
+                    p {
+                        font-size: $sizeLarge;
+                    }
+
+                    img {
+                        width: 25px;
+                        height: auto;
+                        margin-left: 0.3rem;
+                    }
+                }
+
+                h1 {
+                    font-size: $sizeExtraLarge;
+                    margin-bottom: 1rem;
+                }
+
+                p.description {
+                    font-size: $sizeNormal;
+                    margin-bottom: 2rem;
+                }
+
+            }
+
+            div.button {
+
+                text-align: center;
+
+                button {
+
+                    font-size: $sizeNormal;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    margin-bottom: 1rem;
+                }
+
+                button:hover {
+                    background-color: $secondaryColor;
+                }
+
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+
+        main {
+
+            display: block;
+            flex-direction: column;
+
+            div.recipe {
+
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    
+}

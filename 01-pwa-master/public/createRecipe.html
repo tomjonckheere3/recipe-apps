@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link href="icons/android-chrome-192x192.png" type="image/png" rel="shortcut icon">
+    <link href="icons/android-chrome-512x512.png" type="image/png" rel="shortcut icon">
+    <link href="icons/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+    <link href="icons/favicon-16x16.png" type="image/png" rel="shortcut icon">
+    <link href="icons/favicon-32x32.png" type="image/png" rel="shortcut icon">
+    <link href="icons/mstile-150x150.png" type="image/png" rel="shortcut icon">
+    <link href="manifest.json" rel="manifest">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/createRecipe.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <button id="back">Back</button>
+        <ul id="navigationItems">
+            <li><a href="suggestions.html">Suggestions</a></li>
+            <li><a class="currentPage" href="recipes.html">Recipes</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </header>
+    <main>
+        <form>
+            <div id="shortQuestions">
+                <label for="name">What is the name of your recipe?</label>
+                <input type="text" id="name" name="name">
+                <label for="description">Can you give us short description of the recipe.</label>
+                <textarea rows="2" id="description" name="description"></textarea>
+                <label for="mealType">Of what type is the recipe?</label>
+                <select id="mealType" name="mealType" >
+                    <option selected="selected" value="breakfast">Breakfast</option>
+                    <option value="supper">Supper</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+                <label for="picture">Can you upload a picture of the meal.</label>
+                <input type="file" id="picture" name="picture">
+                <label for="servings">How many servings does the recipe provide?</label>
+                <input type="number" id="servings" name="servings" value="0">
+                <label for="prepareTime">How long does it take to prepare the meal (in minutes)?</label>
+                <input type="number" id="prepareTime" name="prepareTime" value="0">
+                <label for="price">What is the cost of this recipe?</label>
+                <input type="integer" id="price" name="price" value="0">
+            </div>
+            <h1>Ingredients</h1>
+            <label for="ingredients">Can you list the ingredients used in your recipe?</label>
+            <ul id="ingredients">
+                <li><input type="text" class="ingredient" id="1" value="ingredient 1"></li>
+            </ul>
+            <button id="addIngredient">+</button>
+            <h1>Steps</h1>
+            <label for="steps">Can you list the steps for your recipe?</label>
+            <ul id="steps">
+                <li><input type="text" class="step" id="1" value="Step 1"></li>
+            </ul>
+            <button id="addStep">+</button>
+            <div>
+                <input type="submit" id="submit" value="Add recipe">
+            </div>
+        </form>
+    </main>
+    <script src="assets/js/lib/localforage.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/createRecipe.js"></script>
+</body>
+</html>

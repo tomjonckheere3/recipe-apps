@@ -1,0 +1,72 @@
+/* WIDTHS */
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/* FONT WEIGHTS */
+/* IMAGE WIDTHS */
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  margin: 0;
+  font-family: Candara, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+}
+html body main {
+  width: 40%;
+  height: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #adebad;
+  border-radius: 7px;
+  box-shadow: 0 0 5px 2px orangered;
+}
+html body main h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+html body main form {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+html body main form input[type=email], html body main form input[type=password], html body main form input[type=text] {
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid orangered;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  outline: none;
+  padding: 0 0 5px 5px;
+}
+html body main form input[type=password] {
+  margin-bottom: 2rem;
+}
+html body main form input[type=submit] {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: orangered;
+  cursor: pointer;
+  outline: none;
+}
+html body main p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 800px) {
+  html body main {
+    width: 99%;
+    height: 99%;
+  }
+}
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,126 @@
+@import "variables";
+
+body {
+    font-family: $mainFont;
+    font-size: $sizeNormal;
+
+    header {
+        button {
+            font-size: $sizeNormal;
+            border-radius: 10px;
+            padding: 5px 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 1rem 0 0 1rem;
+        }
+
+        button:hover {
+            background-color: $secondaryColor;
+        }
+    }
+
+    main {
+        width: 35%;
+        margin-left: auto;
+        margin-right: auto;
+
+        h1 {
+            font-size: $sizeExtraLarge;
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        div.recipe {
+            display: flex;
+            background-color: $primaryColor;
+            padding: 0.5rem;
+            margin-bottom: 0.8rem;
+            overflow-wrap: anywhere;
+
+            div.recipeImage {
+                img {
+                    width: auto;
+                    height: $imgRecipes;
+                    object-fit: cover;
+                }
+            }
+
+            div.recipeInfo {
+                width: $fullWidth;
+                padding: 0 1rem;
+                
+                a {
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }   
+
+                a.recipeName {
+                    display: block;
+                    color: $black;
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+
+                    img {
+                        width: 1rem;
+                        margin-left: 0.3rem;
+                    }
+                }
+
+                div.recipeHeader {
+                    display: flex;
+                    justify-content: space-between; 
+                    
+                    button {
+                        background-color: red;
+                        height: fit-content;
+                    }
+
+                    button:hover {
+                        color: white;
+                    }
+                }
+
+                p.description {
+                    margin-bottom: 1rem;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+
+        main {
+
+            width: 100%;
+
+            div#recipes {
+
+                div.recipe {
+
+                    div.recipeImage {
+
+                        img {
+
+                            width: $imgRecipes;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

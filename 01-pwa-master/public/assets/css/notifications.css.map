@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["sass/_variables.scss","sass/notifications.scss"],"names":[],"mappings":"AAAA;AAGA;AAUA;AAGA;AAKA;AAGA;ACtBA;EACI,aDWO;ECVP,WDaS;;ACXT;EACI,ODNI;;ACQJ;EACI;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAEA;EACI;;AAEA;EACI,aDDjB;;ACKS;EACI;;;AAQpB;EAKY;IACI;IACA;IACA","file":"notifications.css"}

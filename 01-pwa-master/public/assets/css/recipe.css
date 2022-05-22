@@ -1,0 +1,149 @@
+/* WIDTHS */
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/* FONT WEIGHTS */
+/* IMAGE WIDTHS */
+body {
+  font-family: Candara, sans-serif;
+  font-size: 1.2rem;
+}
+body main {
+  background-color: #adebad;
+  padding: 0.6rem;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  overflow-wrap: anywhere;
+}
+body main div#recipeHeader {
+  display: flex;
+  justify-content: space-between;
+}
+body main div#recipeHeader h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+body main div#recipeHeader button#addFavourite {
+  border-radius: 10px;
+  padding: 2px 5px;
+  margin-bottom: 1rem;
+}
+body main div#recipeHeader button#addFavourite:hover {
+  background-color: orangered;
+}
+body main div#recipeInfo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+body main div#recipeInfo img {
+  width: 35%;
+  height: auto;
+  margin-right: 1rem;
+}
+body main div#recipeInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body main div#recipeInfo div p {
+  margin: 0;
+}
+body main div#recipeInfo div p span {
+  font-weight: bold;
+}
+body main div.extendedDetails {
+  margin-bottom: 2rem;
+}
+body main div.extendedDetails h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+body main div.extendedDetails form {
+  display: grid;
+  grid-template-columns: 80% 2% 18%;
+  grid-template-areas: "text . submit";
+  margin: 0 0 1rem 1rem;
+}
+body main div.extendedDetails form input:focus {
+  outline: none;
+}
+body main div.extendedDetails form input[type=text] {
+  grid-area: text;
+  padding: 0.2rem;
+  border-radius: 10px;
+  border-color: orangered;
+}
+body main div.extendedDetails form input[type=submit] {
+  grid-area: submit;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+body main div.extendedDetails form input[type=submit]:hover {
+  background-color: orangered;
+}
+body main div.extendedDetails ul {
+  margin-left: 1rem;
+}
+body main div.extendedDetails ul li {
+  margin-bottom: 0.5rem;
+}
+body main div.extendedDetails ul#ingredientsList {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+body main div.extendedDetails ul#stepsList li {
+  margin-bottom: 1rem;
+}
+body main div.extendedDetails ul#stepsList li h3 {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+body main div.extendedDetails ul#commentsList li {
+  border-bottom: 2px solid darkgrey;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+body main div.extendedDetails ul#commentsList li div.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+body main div.extendedDetails ul#commentsList li div.commentHeader div.user {
+  display: flex;
+}
+body main div.extendedDetails ul#commentsList li div.commentHeader div.user img {
+  width: 1rem;
+  margin-right: 1rem;
+}
+body main div.extendedDetails ul#commentsList li div.commentHeader div.user h3 {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  body main {
+    width: 100%;
+    padding: 0;
+  }
+  body main > * {
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+  body main div#recipeInfo {
+    display: block;
+  }
+  body main div#recipeInfo img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+  body main div#comments form input[type=submit] {
+    content: "place";
+  }
+}
+
+/*# sourceMappingURL=recipe.css.map */

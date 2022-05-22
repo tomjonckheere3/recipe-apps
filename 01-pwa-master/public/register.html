@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="icons/android-chrome-192x192.png" type="image/png" rel="shortcut icon">
+    <link href="icons/android-chrome-512x512.png" type="image/png" rel="shortcut icon">
+    <link href="icons/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+    <link href="icons/favicon-16x16.png" type="image/png" rel="shortcut icon">
+    <link href="icons/favicon-32x32.png" type="image/png" rel="shortcut icon">
+    <link href="icons/mstile-150x150.png" type="image/png" rel="shortcut icon">
+    <link href="manifest.json" rel="manifest">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/register.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>Registration</h1>
+        <form>
+            <input type="text" id="username" name="username" placeholder="username">
+            <input type="password" id="password" name="password" placeholder="password">
+            <p id="registrationError"></p>
+            <input type="submit" id="register" name="register" value="REGISTER">
+        </form>
+        <p>Already have an account? <a href="index.html">Login</a>.</p>
+    </main>
+    <script src="assets/js/lib/localforage.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/init.js"></script>
+    <script src="assets/js/register.js"></script>
+</body>
+</html>

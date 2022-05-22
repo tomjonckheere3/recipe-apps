@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">RecipeApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">username</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="or">or</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="login_fragment">LoginFragment</string>
+    <string name="register_fragment">RegisterFragment</string>
+    <string name="register">Register</string>
+    <string name="suggestions">suggestions</string>
+    <string name="recipes">recipes</string>
+    <string name="detailed_recipe">detailed recipe</string>
+    <string name="notifications">notifications</string>
+    <string name="add_recipe">Add Recipe</string>
+    <string name="breakfast">breakfast</string>
+    <string name="supper">supper</string>
+    <string name="dinner">dinner</string>
+    <string name="steps">Steps</string>
+    <string name="recipe_name">Recipe name</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="price">Price</string>
+    <string name="prepare_time">Prepare time</string>
+    <string name="servings">Servings</string>
+    <string name="add_step">Add step</string>
+    <string name="add_image">Add image</string>
+    <string name="add_ingredient">Add ingredient</string>
+    <string name="step_1">Step 1</string>
+    <string name="ingredient_1">ingredient 1</string>
+    <string name="description">Description</string>
+    <string name="my_favourites">my favourites</string>
+    <string name="my_recipes">my recipes</string>
+    <string name="recipe_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="notification_title">Recipe App</string>
+    <string name="recipe_notification_channel_description" translatable="true">Recipes</string>
+    <string name="recipe_notification_channel_name" translatable="true">Recipes</string>
+    <string name="recipes_reminder">Come have a look at a recipe.</string>
+    <string name="comments">Comments</string>
+    <string name="leave_a_comment">leave a comment</string>
+    <string name="place">Place</string>
+    <string name="favourite">Favourite</string>
+</resources>

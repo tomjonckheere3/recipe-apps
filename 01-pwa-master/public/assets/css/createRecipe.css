@@ -1,0 +1,80 @@
+/* WIDTHS */
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/* FONT WEIGHTS */
+/* IMAGE WIDTHS */
+body {
+  font-family: Candara, sans-serif;
+  font-size: 1.2rem;
+}
+body main {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body main label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+body main div#shortQuestions {
+  margin-bottom: 1rem;
+}
+body main div#shortQuestions input, body main div#shortQuestions textarea, body main div#shortQuestions select {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+body main div#shortQuestions label {
+  margin-bottom: 0.4rem;
+}
+body main h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid black;
+}
+body main ul {
+  margin-bottom: 1rem;
+}
+body main ul li {
+  margin-bottom: 1rem;
+}
+body main ul li input {
+  width: 100%;
+}
+body main button:focus {
+  outline: none;
+}
+body main button {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+body main button:hover {
+  background-color: orangered;
+}
+body main div:last-of-type {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+body main div:last-of-type input {
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+body main div:last-of-type input:hover {
+  background-color: orangered;
+}
+
+@media screen and (max-width: 800px) {
+  body main {
+    width: 90%;
+    margin-top: 2rem;
+  }
+}
+
+/*# sourceMappingURL=createRecipe.css.map */

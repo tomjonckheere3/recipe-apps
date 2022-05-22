@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/suggestionsFragment">
+
+    <fragment
+        android:id="@+id/suggestionsFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.SuggestionsFragment"
+        android:label="Suggestions"
+        tools:layout="@layout/fragment_suggestions" >
+        <action
+            android:id="@+id/action_suggestionsFragment_to_detailedRecipeFragment"
+            app:destination="@id/detailedRecipeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.RecipesFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipes">
+        <action
+            android:id="@+id/action_recipesFragment_to_detailedRecipeFragment"
+            app:destination="@id/detailedRecipeFragment" />
+        <action
+            android:id="@+id/action_recipesFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailedRecipeFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.DetailedRecipeFragment"
+        android:label="Detail page"
+        tools:layout="@layout/fragment_detailed_recipe">
+        <argument
+            android:name="selectedRecipeId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRecipeFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.AddRecipeFragment"
+        android:label="Add recipe"
+        tools:layout="@layout/fragment_add_recipe">
+        <action
+            android:id="@+id/action_addRecipeFragment_to_detailedRecipeFragment"
+            app:destination="@id/detailedRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFavouriteRecipesFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.MyFavouriteRecipesFragment"
+        android:label="My favourite recipes"
+        tools:layout="@layout/fragment_my_favourites_recipes">
+        <action
+            android:id="@+id/action_myFavouriteRecipesFragment2_to_detailedRecipeFragment"
+            app:destination="@id/detailedRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myRecipesFragment"
+        android:name="be.howest.tomjonckheere3.recipeapp.ui.MyRecipesFragment"
+        android:label="My recipes"
+        tools:layout="@layout/fragment_my_recipes">
+        <action
+            android:id="@+id/action_myRecipesFragment2_to_detailedRecipeFragment"
+            app:destination="@id/detailedRecipeFragment" />
+    </fragment>
+</navigation>

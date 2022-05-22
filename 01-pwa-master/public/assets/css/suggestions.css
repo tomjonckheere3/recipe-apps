@@ -1,0 +1,77 @@
+/* WIDTHS */
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/* FONT WEIGHTS */
+/* IMAGE WIDTHS */
+body {
+  font-family: Candara, sans-serif;
+  font-size: 1.2rem;
+}
+body main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+body main div.recipe {
+  width: 90%;
+  background-color: #adebad;
+  overflow-wrap: anywhere;
+}
+body main div.recipe div.recipeImage {
+  margin-bottom: 1rem;
+}
+body main div.recipe div.recipeImage img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+body main div.recipe div.recipeInfo {
+  padding: 0 1rem 1rem 1rem;
+}
+body main div.recipe div.recipeInfo div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+body main div.recipe div.recipeInfo div p {
+  font-size: 1.5rem;
+}
+body main div.recipe div.recipeInfo div img {
+  width: 25px;
+  height: auto;
+  margin-left: 0.3rem;
+}
+body main div.recipe div.recipeInfo h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+body main div.recipe div.recipeInfo p.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+body main div.recipe div.button {
+  text-align: center;
+}
+body main div.recipe div.button button {
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-bottom: 1rem;
+}
+body main div.recipe div.button button:hover {
+  background-color: orangered;
+}
+
+@media screen and (max-width: 800px) {
+  body main {
+    display: block;
+    flex-direction: column;
+  }
+  body main div.recipe {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/*# sourceMappingURL=suggestions.css.map */

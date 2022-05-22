@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recipesFragment"
+        android:title="@string/recipes"/>
+
+    <item
+        android:id="@+id/myFavouriteRecipesFragment"
+        android:title="@string/my_favourites"/>
+
+    <item
+        android:id="@+id/myRecipesFragment"
+        android:title="@string/my_recipes"/>
+
+</menu>

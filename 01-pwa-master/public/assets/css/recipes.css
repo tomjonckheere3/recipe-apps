@@ -1,0 +1,111 @@
+/* WIDTHS */
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/* FONT WEIGHTS */
+/* IMAGE WIDTHS */
+body {
+  font-family: Candara, sans-serif;
+  font-size: 1.2rem;
+}
+body main {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body main div#filterSection h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+body main div#filterSection div.filter {
+  margin-bottom: 1.4rem;
+}
+body main div#filterSection div.filter h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+body main div#recipeSection {
+  display: block;
+}
+body main div#recipeSection div#recipeSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
+}
+body main div#recipeSection div#recipeSectionHeader h2 {
+  font-size: 1.5rem;
+}
+body main div#recipeSection div#recipeSectionHeader h2 span {
+  font-weight: bold;
+}
+body main div#recipeSection div#recipeSectionHeader option {
+  font-size: 1.2rem;
+}
+body main div#recipeSection div#recipes div.recipe {
+  display: flex;
+  background-color: #adebad;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  overflow-wrap: anywhere;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeImage img {
+  width: auto;
+  height: 10rem;
+  object-fit: cover;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo {
+  width: 100%;
+  padding: 0 1rem;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo a {
+  text-decoration: none;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo a:hover {
+  text-decoration: underline;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo a.recipeName {
+  display: block;
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo div img {
+  width: 1rem;
+  margin-left: 0.3rem;
+}
+body main div#recipeSection div#recipes div.recipe div.recipeInfo p.description {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  body main {
+    width: 100%;
+    display: block;
+  }
+  body main div#filterSection {
+    margin-left: 0.5rem;
+  }
+  body main div#recipeSection div#recipeSectionHeader {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  body main div#recipeSection div#recipeSectionHeader h2 {
+    margin-bottom: 0.5rem;
+  }
+  body main div#recipeSection div#recipes div.recipe div.recipeImage img {
+    width: 10rem;
+  }
+}
+
+/*# sourceMappingURL=recipes.css.map */

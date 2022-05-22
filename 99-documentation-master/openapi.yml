@@ -1,0 +1,615 @@
+openapi: 3.0.1
+info:
+  title: Openapi What will i eat?
+  description: Meal sharing api...
+  version: 0.0.1
+servers:
+  - url: http://localhost:8888/api/
+    description: 'Local development implementation for Node API'
+  - url: http://192.168.10.10/api/
+    description: "Local development implementation for Laravel API"
+paths:
+  /api/users:
+    post:
+      tags:
+        - user
+      summary: add a new user
+      operationId: addUser
+      requestBody:
+        description: user object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        200:
+          description: data of new user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+  
+  /api/users/{userId}:
+    get:
+      tags:
+        - user
+      summary: get user with matching id
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: getUser
+      responses:
+        200:
+          description: data of user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+    put:
+      tags:
+       - user
+      summary: update profile of a user
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: updateProfile
+      requestBody:
+        description: update data of user
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        200:
+          description: updated data of the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+    delete:
+      tags:
+        - user
+      summary: delete a user
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: deleteUser
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+  /api/users/{userId}/recipes:
+    get:
+      tags:
+        - recipe
+        - user
+      summary: get recipes the user added
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: getRecipesAddedByUser
+      responses:
+        200:
+          description: data of recipes of the user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+    post:
+      tags:
+        - recipe
+        - user
+      summary: add a recipe
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: addRecipe
+      requestBody:
+        description: recipe object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Recipe"
+        required: true
+      responses:
+        200:
+          description: data of new recipe
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+            
+  /api/users/{userId}/recipes/{recipeId}:
+    put:
+      tags:
+        - user
+        - recipe
+      summary: update a recipe
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/recipeId"
+      operationId: updateRecipe
+      responses:
+        200:
+          description: updated data of recipe
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+    delete:
+      tags:
+        - recipe
+        - user
+      summary: delete a recipe
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/recipeId"
+      operationId: deleteRecipe
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+  
+  /api/users/{userId}/favourites:
+    get:
+      tags:
+        - user
+        - recipe
+        - favourite
+      summary: get favourite recipes of the user
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: getFavouriteRecipes
+      responses:
+        200:
+          description: list of favourite recipes of the user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+    post:
+      tags:
+        - user
+        - favourite
+        - recipe
+      summary: add recipe to favourites
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: addFavouriteRecipe
+      requestBody:
+        description: recipeId the user wants to add
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                recipeId:
+                  type: string
+              required:
+                - recipeId
+      responses:
+        200:
+          description: data of recipe added to favourites
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+              
+  /api/users/{userId}/favourites/{recipeId}:
+    delete:
+      tags:
+        - user
+        - recipe
+        - favourite
+      summary: remove recipe from favourites
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/recipeId"
+      operationId: removeFavouriteRecipe
+      responses:
+        200:
+            description: OK
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+  
+  /api/users/{userId}/notifications:
+    get:  
+      tags:
+        - user
+        - notification
+      summary: get received notifications
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: getNotifications
+      responses:
+        200:
+          description: list of all received notifications of a user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Notification"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+        
+    post:
+      tags:
+        - user
+        - notification
+      summary: push a notification
+      parameters:
+        - $ref: "#/components/parameters/userId"
+      operationId: pushNotification
+      requestBody:
+        description: details notification
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Notification"
+      responses:
+        200:
+          description: data of added notification
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notification"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+              
+
+  /api/recipes:
+    get:
+      tags:
+        - recipe
+      summary: get all recipes
+      parameters:
+        - $ref: "#/components/parameters/orderBy"
+        - $ref: "#/components/parameters/sortOrder"
+        - $ref: "#/components/parameters/mealType"
+      operationId: getRecipes
+      responses:
+        200:
+          description: list of all recipes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+  
+  /api/recipes/{recipeId}:
+    get:
+      tags:
+       - recipe
+      summary: get recipe with matching id
+      parameters:
+        - $ref: "#/components/parameters/recipeId"
+      operationId: getRecipe
+      responses:
+        200:
+          description: data of recipe and comments on it
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Recipe"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+  /api/recipes/{recipeId}/comments:
+    post:
+      tags:
+        - recipe
+        - comment
+      summary: add comment to recipe
+      parameters:
+        - $ref: "#/components/parameters/recipeId"
+      operationId: addComment
+      requestBody:
+        description: comment object that needs to be added
+        content: 
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        200:
+          description: data of new comment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+
+
+  /api/recipes/{recipeId}/comments/{commentId}:
+    put:
+      tags:
+        - recipe
+        - comment
+      summary: update a comment of a recipe
+      parameters:
+        - $ref: "#/components/parameters/commentId"
+        - $ref: "#/components/parameters/recipeId"
+      operationId: updateComment
+      requestBody:
+        description: updated comment object
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        200:
+          description: data of updated comment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+      
+    delete:
+      tags:
+        - recipe
+        - comment
+      summary: remove a comment of a recipe
+      parameters:
+        - $ref: "#/components/parameters/commentId"
+        - $ref: "#/components/parameters/recipeId"
+      operationId: deleteComment
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad request
+        403:
+          description: Forbidden
+        500:
+          description: Server error
+          
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - username
+        - password
+        
+    Recipe:
+      type: object
+      properties:
+        recipeId:
+          type: integer
+        userId:
+          type: integer
+        recipeName:
+          type: string
+        mealType:
+          type: string
+          enum:
+            - breakfast
+            - brunch
+            - lunch
+            - supper
+            - dinner
+        servings:
+          type: integer
+        prepareTime:
+          type: integer
+        directions:
+          type: array
+          items:
+            type: string
+        ingredients:
+          type: array
+          items:
+            type: string
+        price:
+          type: string
+        comments:
+          type: array
+          items:
+            $ref: "#/components/schemas/Comment"
+      required:
+        - userId
+        - recipeName
+        - mealType
+        - servings
+        - prepareTime
+        - price
+        
+    Notification:
+      type: object
+      properties:
+        notificationId:
+          type: integer
+        userId:
+          type: integer
+        notificationType:
+          type: string
+        notificationContent:
+          type: string
+        date:
+          type: string
+      required:
+        - userId
+        - notificationContent
+        - date
+        
+    Comment:
+      type: object
+      properties:
+        commentId:
+          type: integer
+        recipeId:
+          type: integer
+        userId:
+          type: integer
+        commentContent:
+          type: string
+      required:
+        - userId
+        - commentContent
+  
+  parameters:
+    userId:
+      in: path
+      name: userId
+      schema:
+        type: integer
+      required: true
+      description: numeric id of the user
+      
+    recipeId:
+      in: path
+      name: recipeId
+      schema:
+        type: integer
+      required: true
+      description: numeric id of the recipe
+      
+    commentId:
+      in: path
+      name: commentId
+      schema:
+        type: integer
+      required: true
+      description: numeric id of the comment
+      
+    orderBy:
+      in: query
+      description: what attribute to sort on
+      name: sort
+      schema:
+        type: string
+        enum: 
+          - recipeName
+          - price
+          - prepareTime
+          - servings
+          
+    sortOrder:
+      in: query
+      description: what direction to sort on
+      name: sortOrder
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+          
+    mealType:
+      in: query
+      description: filter on meal type
+      name: mealType
+      schema:
+        type: string
+        enum:
+          - breakfast
+          - brunch
+          - lunch
+          - supper
+          - dinner
+    
+
+        

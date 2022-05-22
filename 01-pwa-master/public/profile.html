@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="icons/android-chrome-192x192.png" type="image/png" rel="shortcut icon">
+    <link href="icons/android-chrome-512x512.png" type="image/png" rel="shortcut icon">
+    <link href="icons/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+    <link href="icons/favicon-16x16.png" type="image/png" rel="shortcut icon">
+    <link href="icons/favicon-32x32.png" type="image/png" rel="shortcut icon">
+    <link href="icons/mstile-150x150.png" type="image/png" rel="shortcut icon">
+    <link href="manifest.json" rel="manifest">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/profile.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <ul id="navigationItems">
+            <li><a href="suggestions.html">Suggestions</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a class="currentPage" href="profile.html">Profile</a></li>
+        </ul>
+    </header>
+    <main>
+        <img src="assets/images/icons/servingsIcon.png">
+        <h1 id="username"></h1>
+        <div id="userRecipes">
+            <button id="myRecipes">My Recipes</button>
+            <button id="myFavourites">My favourites</button>
+        </div>
+        <button id="logout">Logout</button>
+    </main>
+    <script src="assets/js/lib/localforage.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

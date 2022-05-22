@@ -1,0 +1,86 @@
+@import "variables";
+
+html {
+    height: $fullWidth;
+
+    body {
+
+        height: $fullWidth;
+        margin: 0;
+        font-family: $mainFont;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: $white;
+    
+        main {
+    
+            width: 40%;
+            height: 50%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background-color: $primaryColor;
+            border-radius: 7px;
+            box-shadow: 0 0 5px 2px $secondaryColor;
+
+            h1 {
+                font-size: $sizeExtraLarge;
+                text-align: center;
+            }
+    
+            form {
+    
+                display: grid;
+                justify-items: center;
+                align-items: center;
+    
+                input[type=email], input[type=password], input[type=text] {
+                    font-size: $sizeLarge;
+                    border: none;
+                    border-bottom: 1px solid $secondaryColor;
+                    margin-bottom: 1rem;
+                    border-radius: 3px;
+                    outline: none;
+                    padding: 0 0 5px 5px;
+                }
+
+                input[type=password] {
+                    margin-bottom: 2rem;
+                }
+    
+                input[type=submit] {
+                    width: 100%;
+                    padding: 7px;
+                    border: none;
+                    border-radius: 5px;
+                    color: $white;
+                    font-weight: $bold;
+                    background-color: $secondaryColor;
+                    cursor: pointer;
+                    outline: none;
+                }
+        
+            }
+
+            p {
+                font-size: $sizeNormal;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    html {
+
+        body {
+
+            main {
+    
+                width: 99%;
+                height: 99%;
+            }
+        }
+    }
+}

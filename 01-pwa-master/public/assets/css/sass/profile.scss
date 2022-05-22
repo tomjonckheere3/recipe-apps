@@ -1,0 +1,66 @@
+@import "variables";
+
+body {
+    font-family: $mainFont;
+    font-size: $sizeNormal;
+
+    main {
+        display: grid;
+        justify-items: center;
+
+        img {
+            width: $imgRecipes;
+            height: auto;
+            border: 1px solid $black;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: $sizeExtraLarge;
+            margin-bottom: 2rem;
+        }
+
+        div#userRecipes {
+
+            width: 10%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+
+            button {
+                margin-bottom: 2rem;
+            }
+        }
+
+        button {
+            font-size: $sizeNormal;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        button:hover {
+            background-color: $secondaryColor;
+        }
+
+        button#logout {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+
+        main {
+
+            margin-top: 1rem;
+
+            div#userRecipes {
+
+                width: 50%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

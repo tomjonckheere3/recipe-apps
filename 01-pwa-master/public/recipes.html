@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link href="icons/android-chrome-192x192.png" type="image/png" rel="shortcut icon">
+    <link href="icons/android-chrome-512x512.png" type="image/png" rel="shortcut icon">
+    <link href="icons/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+    <link href="icons/favicon-16x16.png" type="image/png" rel="shortcut icon">
+    <link href="icons/favicon-32x32.png" type="image/png" rel="shortcut icon">
+    <link href="icons/mstile-150x150.png" type="image/png" rel="shortcut icon">
+    <link href="manifest.json" rel="manifest">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/recipes.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <ul id="navigationItems">
+            <li><a href="suggestions.html">Suggestions</a></li>
+            <li><a class="currentPage" href="recipes.html">Recipes</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <button id="add">Add Recipe</button>
+    </header>
+    <main>
+        <div id="filterSection">
+            <h1>Filter</h1>
+            <div id="filters">
+                <div class="filter">
+                    <h2>Meal type</h2>
+                    <div id="mealTypes">
+                        <div class="filterOption">
+                            <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+                            <label for="breakfast">Breakfast</label>
+                        </div>
+                        <div class="filterOption">
+                            <input type="checkbox" id="supper" name="supper" value="supper">
+                            <label for="supper">Supper</label>
+                        </div>
+                        <div class="filterOption">
+                            <input type="checkbox" id="dinner" name="dinner" value="dinner" >
+                            <label for="dinner">Dinner</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="recipeSection">
+            <div id="recipeSectionHeader">
+                <h2>Found <span id="totalRecipes"></span> recipes</h2>
+                <div id="sorting">
+                    <label for="sortBy">Sort by: </label>
+                    <select id="sortBy" name="sortBy">
+                        <option value="recipeName">Name</option>
+                        <option value="price">Price</option>
+                        <option value="prepareTime">Prepare time</option>
+                        <option value="servings">Servings</option>
+                    </select>
+                    <select id="sortOrder" name="sortOrder">
+                        <option value="asc">asc</option>
+                        <option value="desc">desc</option>
+                    </select>
+                </div>
+            </div>
+            <div id="recipes">
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/lib/localforage.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/recipes.js"></script>
+</body>
+</html>

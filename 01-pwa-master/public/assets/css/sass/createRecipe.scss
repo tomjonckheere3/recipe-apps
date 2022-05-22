@@ -1,0 +1,97 @@
+@import "variables";
+
+body {
+    font-family: $mainFont;
+    font-size: $sizeNormal;
+
+    main {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+
+        label {
+            display: block;
+            font-size: $sizeNormal;
+            margin-bottom: 1rem;
+        }
+
+        div#shortQuestions {
+            margin-bottom: 1rem;
+
+            input, textarea, select {
+                display: block;
+                width: 100%;
+                margin-bottom: 0.8rem;
+            }
+
+            label {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        h1 {
+            font-size: $sizeLarge;
+            margin-bottom: 1rem;
+            padding-bottom: 0.2rem;
+            border-bottom: 2px solid $black;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+
+            li {
+                margin-bottom: 1rem;
+
+                input {
+                    width: 100%;
+                }
+
+                
+            }
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            font-weight: $bold;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        button:hover {
+            background-color: $secondaryColor;
+        }
+
+        //Helps center submit button
+        div:last-of-type {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+
+            input {
+                font-size: $sizeNormal;
+                border-radius: 10px;
+                padding: 5px 10px;
+            }
+
+            input:hover {
+                background-color: $secondaryColor;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+
+        main {
+
+            width: 90%;
+            margin-top: 2rem;
+        }
+    }
+}
